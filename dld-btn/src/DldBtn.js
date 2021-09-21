@@ -5,7 +5,7 @@ export class DldBtn extends LitElement {
     return css`
       :host {
         display: block;
-        padding: 30px;
+        padding: 25px;
         color: var(--dld-btn-text-color, #000);
       }
     `;
@@ -20,12 +20,12 @@ export class DldBtn extends LitElement {
 
   constructor() {
     super();
-    this.title = 'Hey the';
-    this.counter = 6;
+    this.title = 'Hey there';
+    this.counter = 5;
   }
 
   __increment() {
-    this.counter += 2;
+    this.counter += 1;
   }
 
   render() {
