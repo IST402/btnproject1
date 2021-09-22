@@ -59,7 +59,7 @@ export class DldBtn extends LitElement {
 
   constructor() {
     super();
-    this.open = false;
+    this.open = true;
     this.title = 'Download VSCode';
     this.img1 = '../image/download.png';
     this.img11 = '../image/download1.png';
@@ -88,7 +88,7 @@ export class DldBtn extends LitElement {
   render() {
     return html`
   <div class="dropdown">
-      <button @click=${this._toggleDropdown} class="dropbtn">
+      <button @click=${this._toggleDropdown} @esc=${this._toggleDropdown} class="dropbtn">
       <img src="${this.img1}"/>
       ${this.title}
        </button>
