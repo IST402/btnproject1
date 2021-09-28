@@ -1,3 +1,10 @@
-We learned about implementing an event listener to escape out of the button selection.
+Similar: 
+1. Hover status 
+2. Implemented the link the same way
 
-Our next steps involve adding designs to the button and creating the features for hover, disabled, focus, etc. 
+Difference:
+1. Border radius, shape of button is different
+2. focus status is different, effect is different. They had an additional function
+
+
+We will leverage their focus and disable function. 
