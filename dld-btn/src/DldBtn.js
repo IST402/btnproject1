@@ -11,10 +11,10 @@ export class DldBtn extends LitElement {
         padding: 25px;
         color: var(--dld-btn-text-color, #041df7);
       }
-      .button:hover{
-        background-color: rgba(239,239,0,0.5);
-      }
 
+      :host([dark]) button {
+        background-color: black;
+      }
 
 .dropdown {
   position: relative;
@@ -69,10 +69,18 @@ export class DldBtn extends LitElement {
     font-family: Arial, Helvetica, sans-serif;
     }
 
-  .dropbtn:hover, :focus{
+  .dropbtn:hover{
     transform: translateY(-3px);
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    background-color: green;
   }
+
+  .dropbtn:focus{
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    background-color: red;
+  }
+
     `;
   }
 
@@ -82,6 +90,7 @@ export class DldBtn extends LitElement {
       open: {type: Boolean, reflect: true},
       icon: { type: String },
       disabled: { type: Boolean, reflect: true },
+      dark: { type: Boolean, reflect: true },
     };
   }
 
@@ -97,11 +106,17 @@ export class DldBtn extends LitElement {
     this.icon = 'file-download';
     window.addEventListener('keydown', this.keyPress.bind(this));
     this.disabled = false;
+    this.dark = false;
   }
 
   _toggleDropdown(e){
     this.open = !this.open;
+    this.dark = !this.dark;
+    let audio = new Audio(new URL(`meow.mp3`, import.meta.url).href);
+    audio.play();
   }
+
+
   _disable(e){
     this.disabled = !this.disabled;
   }
