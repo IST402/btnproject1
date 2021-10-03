@@ -1,9 +1,9 @@
 {
-  "name": "dld-btn",
+  "name": "@yjt/dld-btn",
   "description": "Webcomponent dld-btn following open-wc recommendations",
   "license": "MIT",
   "author": "dld-btn",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "module": "index.js",
   "private": false,
