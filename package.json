@@ -1,4 +1,8 @@
 {
+  "name": "@ist402/btnproject1",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@lrnwebcomponents/simple-icon": "^4.0.0"
   }
