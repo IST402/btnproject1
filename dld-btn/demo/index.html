@@ -23,6 +23,10 @@
 
     const title = 'Download VSCode';
     render(
+      //<dld-btn icon="save" title="Save"></dld-btn>
+       // <dld-btn icon="av:games" title="Play a game" link="https://ea.com"></dld-btn>
+       // <dld-btn title="No icon" link="https://youtube.com/"></dld-btn>
+       //<simple-icon-lite icon="save"></simple-icon-lite>
       html`
         <dld-btn .title=${title}>
             <a href="https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal" class="links"> <img src="${img2}"/> macOS</a>
@@ -30,11 +34,9 @@
             <a href="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" class="links"> <img src="${img4}"/> Linux</a>
         </dld-btn>
 
-        <simple-icon-lite icon="save"></simple-icon-lite>
+        
 
-        <dld-btn icon="save" title="Save"></dld-btn>
-        <dld-btn icon="av:games" title="Play a game" link="https://ea.com"></dld-btn>
-        <dld-btn title="No icon" link="https://youtube.com/"></dld-btn>
+        
       `,
       document.querySelector('#demo')
     );

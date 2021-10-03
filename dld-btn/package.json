@@ -6,6 +6,11 @@
   "version": "0.0.0",
   "main": "index.js",
   "module": "index.js",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  
   "scripts": {
     "analyze": "cem analyze --litelement",
     "start": "web-dev-server",

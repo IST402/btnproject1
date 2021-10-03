@@ -69,7 +69,7 @@ export class DldBtn extends LitElement {
     font-family: Arial, Helvetica, sans-serif;
     }
 
-  .dropbtn:hover{
+  .dropbtn:hover, :focus{
     transform: translateY(-3px);
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
   }
@@ -80,7 +80,8 @@ export class DldBtn extends LitElement {
     return {
       title: { type: String },
       open: {type: Boolean, reflect: true},
-      icon: { type: String }
+      icon: { type: String },
+      disabled: { type: Boolean, reflect: true },
     };
   }
 
@@ -93,19 +94,27 @@ export class DldBtn extends LitElement {
     this.img2 = '../image/apple.png';
     this.img3 = '../image/windows.png';
     this.img4 = '../image/linux.png';
-    this.icon = 'av:skip-previous';
-    this.addEventListener('keydown', this.keyPress)
+    this.icon = 'file-download';
+    window.addEventListener('keydown', this.keyPress.bind(this));
+    this.disabled = false;
   }
 
   _toggleDropdown(e){
     this.open = !this.open;
+  }
+  _disable(e){
+    this.disabled = !this.disabled;
   }
 
   keyPress (e) { console.log(e)
     if(e.key === "Escape") {
       this._toggleDropdown(e)
     }
+    else if(e.key === "Control" ) {
+      this._disable(e)
+    }
   }
+
 
 
   updated(changedProperties){
@@ -124,7 +133,7 @@ export class DldBtn extends LitElement {
   render() {
     return html`
   <div class="dropdown" >
-      <button @click=${this._toggleDropdown} class="dropbtn">
+      <button ?disabled=${this.disabled} @click=${this._toggleDropdown} class="dropbtn">
       
       <simple-icon-lite icon="${this.icon}"></simple-icon-lite>
       
