@@ -91,6 +91,7 @@ export class DldBtn extends LitElement {
       icon: { type: String },
       disabled: { type: Boolean, reflect: true },
       dark: { type: Boolean, reflect: true },
+      audio: { type: Boolean, reflect: true }
     };
   }
 
@@ -107,13 +108,13 @@ export class DldBtn extends LitElement {
     window.addEventListener('keydown', this.keyPress.bind(this));
     this.disabled = false;
     this.dark = false;
+    this.audio = new Audio(new URL(`meow.mp3`, import.meta.url).href);
   }
 
   _toggleDropdown(e){
     this.open = !this.open;
     this.dark = !this.dark;
-    let audio = new Audio(new URL(`meow.mp3`, import.meta.url).href);
-    audio.play();
+    this.audio.play();
   }
 
 
